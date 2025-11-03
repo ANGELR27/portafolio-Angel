@@ -23,160 +23,184 @@
   </head>
   <body>
     <main id="home" class="principal">
-      <div id="sobre-mi" class="sobre-mi">
+      <div class="top-navigation">
         <nav class="menu">
-          <div class="logo">An G</div>
-          <ul class="lista">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-          <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-          </button>
+          <div class="nav-inner">
+            <div class="logo" aria-label="Logo personal">An G</div>
+            <ul class="lista">
+              <li><a href="#home">Inicio</a></li>
+              <li><a href="#sobre-mi">Sobre mí</a></li>
+              <li><a href="#proyectos">Proyectos</a></li>
+              <li><a href="#tecnologias">Tecnologías</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+              <a class="btn-link" href="mailto:angel.rodriguez@email.com">Agenda una reunión</a>
+              <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"/>
+                  <line x1="12" y1="1" x2="12" y2="3"/>
+                  <line x1="12" y1="21" x2="12" y2="23"/>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                  <line x1="1" y1="12" x2="3" y2="12"/>
+                  <line x1="21" y1="12" x2="23" y2="12"/>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </nav>
+      </div>
+      <div id="sobre-mi" class="sobre-mi">
         <div class="seccion-perfil">
           <div class="text-sobre-mi">
-            <h2>
-              Soy Angel Rodriguez,
-              <strong class="text-color">Desarrollador Full-Stack Java</strong>
-              Junior...
-            </h2>
+            <span class="hero-badge">Disponible para nuevos proyectos</span>
+            <h1>Hola, soy Angel Rodriguez</h1>
             <p>
-              Apasionado por crear experiencias web interactivas y funcionales. 
-              Con experiencia en desarrollo Frontend y bases sólidas en tecnologías 
-              como HTML, CSS, JavaScript y Java. Busco constantemente aprender y 
-              aplicar nuevas tecnologías para resolver problemas reales.
+              Desarrollador Full-Stack Junior con foco en crear experiencias digitales limpias, accesibles y eficientes.
+              Me especializo en transformar ideas en productos escalables combinando Java, JavaScript y herramientas modernas impulsadas por IA.
             </p>
-            <button class="ver-mas" onclick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'})">Ver portafolio ></button>
+            <div class="role-tags">
+              <span>Frontend</span>
+              <span>Backend</span>
+              <span>IA & Automatización</span>
+            </div>
+            <div class="cta-group">
+              <a class="btn-primary" href="#proyectos">Ver proyectos</a>
+              <a class="btn-secondary" href="#contacto">Contactarme</a>
+            </div>
+            <div class="stats-grid">
+              <div class="stat">
+                <span class="stat-value">+10</span>
+                <span class="stat-label">Proyectos lanzados</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">2 años</span>
+                <span class="stat-label">Construyendo productos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">+6</span>
+                <span class="stat-label">Stack principal</span>
+              </div>
+            </div>
           </div>
           <div class="img-perfil">
-            <img class="perfil" src="./public/img/perfil.png" alt="perfil" />
+            <div class="perfil-card">
+              <img class="perfil" src="./public/img/perfil.png" alt="perfil" />
+              <div class="perfil-overlay">
+                <p>Enfocado en entregar soluciones integrales y documentación clara para equipos multidisciplinarios.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <div class="experiencia">
-      <h2 class="titulo-experiencia">Mi Experiencia</h2>
-      <div class="contenedor-experiencia">
-        <div class="lugar-experiencia">
-          <img
-            class="logo-generation"
-            src="./public/img/generation.png"
-            alt="logo
-          generation"
-          />
-          <h3>- Front-end Developer</h3>
+    <div class="experiencia" aria-labelledby="titulo-experiencia">
+      <h2 id="titulo-experiencia" class="titulo-experiencia">Experiencia y formación</h2>
+      <p class="experience-intro">
+        Trabajo bajo metodologías colaborativas, priorizando la calidad del código, la comunicación con stakeholders y la entrega continua.
+      </p>
+      <div class="timeline">
+        <div class="contenedor-experiencia">
+          <span class="timeline-date">Jun 2024 — Actualidad</span>
+          <div class="lugar-experiencia">
+            <img
+              class="logo-generation"
+              src="./public/img/generation.png"
+              alt="Logo Generation"
+            />
+            <div>
+              <h3>Front-end Developer</h3>
+              <p class="experience-summary">Generation Latam · Programa intensivo de proyectos</p>
+            </div>
+          </div>
+          <ul>
+            <li>Implementé interfaces responsive optimizadas para Core Web Vitals.</li>
+            <li>Diseñé experiencias UI/UX consistentes con sistemas de diseño reutilizables.</li>
+            <li>Construí integraciones con APIs externas y manejé estados complejos en equipo.</li>
+          </ul>
         </div>
-        <p>21 Jun 2024 - En curso</p>
-        <ul>
-          <li>Desarrollé interfaces responsivas con HTML, CSS y JavaScript.</li>
-          <li>Creé una PokéAPI funcional con interfaz interactiva.</li>
-          <li>Diseñé la parte visual de un e-commerce en equipo.</li>
-          <li>Experiencia en Frontend con foco en UI/UX.</li>
-          <li>
-            Colaboré con equipos en entornos simulados, siguiendo buenas
-            prácticas de desarrollo y versionado con Git/GitHub.
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Experiencia SENA -->
-      <div class="contenedor-experiencia">
-        <div class="lugar-experiencia">
-          <img
-            class="logo-generation"
-            src="./public/img/Logo-sena.png"
-            alt="logo sena"
-          />
-          <h3>- Tecnólogo en Análisis y Desarrollo de Software</h3>
+        <div class="contenedor-experiencia">
+          <span class="timeline-date">Dic 2022 — Actualidad</span>
+          <div class="lugar-experiencia">
+            <img
+              class="logo-generation"
+              src="./public/img/Logo-sena.png"
+              alt="Logo SENA"
+            />
+            <div>
+              <h3>Tecnólogo en ADSO</h3>
+              <p class="experience-summary">SENA · Análisis y Desarrollo de Software</p>
+            </div>
+          </div>
+          <ul>
+            <li>Modelé soluciones con UML y enfoques orientados a objetos.</li>
+            <li>Desarrollé APIs REST documentadas con énfasis en seguridad y pruebas.</li>
+            <li>Gestioné proyectos académicos completos desde la planificación hasta el despliegue.</li>
+          </ul>
         </div>
-        <p>Diciembre 2022 - Presente</p>
-        <ul>
-          <li>Aprendí a diseñar diagramas UML para modelado de sistemas.</li>
-          <li>Estudié el ciclo de vida del desarrollo de software (SDLC).</li>
-          <li>Control de versiones con Git y GitHub para trabajo colaborativo.</li>
-          <li>Desarrollo de API REST para comunicación entre aplicaciones.</li>
-          <li>
-            Desarrollé un proyecto de gestor de citas médicas aplicando los
-            conocimientos adquiridos.
-          </li>
-        </ul>
-      </div>
-
-      <!-- Experiencia IA/Vibe Coding -->
-      <div class="contenedor-experiencia">
-        <div class="lugar-experiencia">
-          <svg class="logo-generation" width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="100" height="100" rx="20" fill="url(#gradient)"/>
-            <path d="M30 35L40 45L30 55M50 55H70" stroke="white" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="75" cy="25" r="3" fill="#4ADE80"/>
-            <defs>
-              <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="100">
-                <stop offset="0%" stop-color="#667eea"/>
-                <stop offset="100%" stop-color="#764ba2"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          <h3>- IA & Vibe Coding Specialist</h3>
+        <div class="contenedor-experiencia">
+          <span class="timeline-date">2023 — Actualidad</span>
+          <div class="lugar-experiencia">
+            <svg class="logo-generation" width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" rx="20" fill="url(#gradient)"/>
+              <path d="M30 35L40 45L30 55M50 55H70" stroke="white" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="75" cy="25" r="3" fill="#4ADE80"/>
+              <defs>
+                <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="100">
+                  <stop offset="0%" stop-color="#667eea"/>
+                  <stop offset="100%" stop-color="#764ba2"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div>
+              <h3>IA & Vibe Coding Specialist</h3>
+              <p class="experience-summary">Laboratorios personales</p>
+            </div>
+          </div>
+          <ul>
+            <li>Automatizo flujos de desarrollo con agentes y herramientas de IA.</li>
+            <li>Construí un editor colaborativo en tiempo real con mensajería en vivo.</li>
+            <li>Desarrollé soluciones end-to-end con streaming, autenticación y notificaciones.</li>
+          </ul>
         </div>
-        <p>2023 - Presente</p>
-        <ul>
-          <li>Dominio de programación asistida por IA (Vibe Coding) para desarrollo ágil y eficiente.</li>
-          <li>Creación de prompts efectivos para optimizar la comunicación con modelos de lenguaje.</li>
-          <li>Automatización de procesos de desarrollo mediante herramientas de IA.</li>
-          <li>Construí un editor de código colaborativo en tiempo real con arquitectura moderna.</li>
-          <li>Desarrollé una aplicación de streaming completa con filtrado avanzado y API de TMDb para trailers oficiales.</li>
-          <li>Diseñé y construí una aplicación de correo funcional para uso diario, capaz de recibir mensajes y códigos de verificación.</li>
-        </ul>
       </div>
     </div>
     <div id="proyectos" class="proyectos">
-      <h2 class="titulo-proyectos">Mis Proyectos</h2>
+      <h2 class="titulo-proyectos">Selección de proyectos</h2>
+      <p class="projects-intro">Soluciones con foco en rendimiento, diseño sustentable y experiencias centradas en el usuario.</p>
       <div class="contenedor-proyectos">
         <div class="card-proyecto">
-          <img src="./public/img/pokemon.png" alt="pokemon" />
+          <img src="./public/img/pokemon.png" alt="Interfaz PokéAPI" />
           <div class="text-card">
             <div class="ver-proyecto">
-              <h3>PokéAPI</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Ver proyecto</button>
+              <h3>PokéAPI Explorer</h3>
+              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
             </div>
             <p>
-              Aplicación web interactiva que consume la PokéAPI para mostrar 
-              información detallada de Pokémon. Incluye búsqueda, filtros y 
-              visualización dinámica de datos.
+              Buscador multiplataforma con filtros dinámicos, caching de peticiones y tipografías accesibles para explorar datos oficiales de la PokéAPI.
             </p>
+            <div class="chip-group">
+              <span class="chip">Front-end</span>
+              <span class="chip">REST API</span>
+              <span class="chip">Performance</span>
+            </div>
             <div class="tecnologias-card">
-              <div class="html">
-                <i class="devicon-html5-plain"></i>
-              </div>
-              <div class="css">
-                <i class="devicon-css3-plain"></i>
-              </div>
-              <div class="js">
-                <i class="devicon-javascript-plain"></i>
-              </div>
+              <i class="devicon-html5-plain"></i>
+              <i class="devicon-css3-plain"></i>
+              <i class="devicon-javascript-plain"></i>
             </div>
           </div>
         </div>
         <div class="card-proyecto card-editor">
           <div class="image-carousel">
-            <img src="./public/img/Motohub1.png" alt="MotoHub - vista 1" class="carousel-img active" />
-            <img src="./public/img/motohub2.png" alt="MotoHub - vista 2" class="carousel-img" />
+            <img src="./public/img/Motohub1.png" alt="MotoHub - catálogo" class="carousel-img active" />
+            <img src="./public/img/motohub2.png" alt="MotoHub - checkout" class="carousel-img" />
             <div class="carousel-indicators">
               <span class="indicator active"></span>
               <span class="indicator"></span>
@@ -185,30 +209,27 @@
           <div class="text-card">
             <div class="ver-proyecto">
               <h3>MotoHub</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Ver proyecto</button>
+              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
             </div>
             <p>
-              Proyecto de e-commerce para productos deportivos desarrollado en 
-              equipo. Incluye catálogo de productos, carrito de compras y 
-              diseño responsive.
+              E-commerce deportivo con arquitectura modular, componentes reutilizables y flujos de compra optimizados para conversiones móviles.
             </p>
+            <div class="chip-group">
+              <span class="chip">Diseño UI</span>
+              <span class="chip">Responsive</span>
+              <span class="chip">Trabajo en equipo</span>
+            </div>
             <div class="tecnologias-card">
-              <div class="html">
-                <i class="devicon-html5-plain"></i>
-              </div>
-              <div class="css">
-                <i class="devicon-css3-plain"></i>
-              </div>
-              <div class="js">
-                <i class="devicon-javascript-plain"></i>
-              </div>
+              <i class="devicon-html5-plain"></i>
+              <i class="devicon-css3-plain"></i>
+              <i class="devicon-javascript-plain"></i>
             </div>
           </div>
         </div>
         <div class="card-proyecto card-editor">
           <div class="image-carousel">
-            <img src="./public/img/portafolio1.png" alt="Portafolio Web - vista 1" class="carousel-img active" />
-            <img src="./public/img/portafiolio 2.png" alt="Portafolio Web - vista 2" class="carousel-img" />
+            <img src="./public/img/portafolio1.png" alt="Portafolio - vista principal" class="carousel-img active" />
+            <img src="./public/img/portafiolio 2.png" alt="Portafolio - modo oscuro" class="carousel-img" />
             <div class="carousel-indicators">
               <span class="indicator active"></span>
               <span class="indicator"></span>
@@ -217,58 +238,48 @@
           <div class="text-card">
             <div class="ver-proyecto">
               <h3>Portafolio Web</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Ver proyecto</button>
+              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
             </div>
             <p>
-              Sitio web personal para mostrar proyectos y habilidades. 
-              Diseño moderno con efectos visuales, animaciones CSS y 
-              modo oscuro.
+              Sitio personal con modo oscuro/claro, animaciones suaves e integración con herramientas no-code para gestionar contenido.
             </p>
+            <div class="chip-group">
+              <span class="chip">UI Systems</span>
+              <span class="chip">Animaciones</span>
+            </div>
             <div class="tecnologias-card">
-              <div class="html">
-                <i class="devicon-html5-plain"></i>
-              </div>
-              <div class="css">
-                <i class="devicon-css3-plain"></i>
-              </div>
-              <div class="js">
-                <i class="devicon-javascript-plain"></i>
-              </div>
+              <i class="devicon-html5-plain"></i>
+              <i class="devicon-css3-plain"></i>
+              <i class="devicon-javascript-plain"></i>
             </div>
           </div>
         </div>
         <div class="card-proyecto">
-          <img src="./public/img/crud.png" alt="crud" />
+          <img src="./public/img/crud.png" alt="Panel CRUD" />
           <div class="text-card">
             <div class="ver-proyecto">
-              <h3>Sistema CRUD Java</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Ver proyecto</button>
+              <h3>Gestor de datos Java</h3>
+              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
             </div>
             <p>
-              Aplicación de gestión de datos con operaciones CRUD completas. 
-              Desarrollada en Java con conexión a base de datos MySQL y 
-              interfaz de usuario intuitiva.
+              Aplicación CRUD con Java y MySQL que incluye validaciones, exportación CSV y despliegue empaquetado para equipos internos.
             </p>
+            <div class="chip-group">
+              <span class="chip">Back-end</span>
+              <span class="chip">Bases de datos</span>
+            </div>
             <div class="tecnologias-card">
-              <div class="html">
-                <i class="devicon-java-plain"></i>
-              </div>
-              <div class="css">
-                <i class="devicon-mysql-plain"></i>
-              </div>
-              <div class="js">
-                <i class="devicon-git-plain"></i>
-              </div>
+              <i class="devicon-java-plain"></i>
+              <i class="devicon-mysql-plain"></i>
+              <i class="devicon-git-plain"></i>
             </div>
           </div>
         </div>
-        
-        <!-- Proyecto Editor Colaborativo -->
         <div class="card-proyecto card-editor">
           <div class="image-carousel">
-            <img src="./public/img/editor1.png" alt="editor colaborativo - vista 1" class="carousel-img active" />
-            <img src="./public/img/editor2.png" alt="editor colaborativo - vista 2" class="carousel-img" />
-            <img src="./public/img/editor3.png" alt="editor colaborativo - vista 3" class="carousel-img" />
+            <img src="./public/img/editor1.png" alt="Editor colaborativo - modo oscuro" class="carousel-img active" />
+            <img src="./public/img/editor2.png" alt="Editor colaborativo - chat" class="carousel-img" />
+            <img src="./public/img/editor3.png" alt="Editor colaborativo - sesión" class="carousel-img" />
             <div class="carousel-indicators">
               <span class="indicator active"></span>
               <span class="indicator"></span>
@@ -277,36 +288,32 @@
           </div>
           <div class="text-card">
             <div class="ver-proyecto">
-              <h3>Editor de Código Colaborativo</h3>
-              <button onclick="window.open('https://angr.vercel.app', '_blank')">Ver proyecto</button>
+              <h3>Editor colaborativo</h3>
+              <button onclick="window.open('https://angr.vercel.app', '_blank')">Ver demo</button>
             </div>
             <p>
-              Editor de código en tiempo real con colaboración múltiple. 
-              Incluye resaltado de sintaxis, compilación en vivo, chat integrado 
-              y sincronización automática entre usuarios. Construido con IA.
+              Plataforma en tiempo real con colaboración simultánea, chat contextual y sincronización mediante Supabase y WebSockets.
             </p>
+            <div class="chip-group">
+              <span class="chip">Tiempo real</span>
+              <span class="chip">IA copiloto</span>
+            </div>
             <div class="tecnologias-card">
-              <div class="html">
-                <i class="devicon-react-original colored"></i>
-              </div>
-              <div class="css">
-                <i class="devicon-nodejs-plain colored"></i>
-              </div>
-              <div class="js">
-                <i class="devicon-javascript-plain colored"></i>
-              </div>
-              <div class="html">
-                <i class="devicon-supabase-plain colored"></i>
-              </div>
+              <i class="devicon-react-original colored"></i>
+              <i class="devicon-nodejs-plain colored"></i>
+              <i class="devicon-javascript-plain colored"></i>
+              <i class="devicon-supabase-plain colored"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
     <section class="skill" id="tecnologias">
-      <h2 class="titulo-skill">Stack Tecnológico</h2>
+      <div class="skill-header">
+        <h2 class="titulo-skill">Stack y herramientas</h2>
+        <p>Combino tecnologías modernas para entregar soluciones completas, mantenibles y orientadas a negocio.</p>
+      </div>
       <div class="tecnologias-grid">
-        <!-- Frontend -->
         <div class="tech-category">
           <h3 class="category-title">Frontend</h3>
           <div class="tech-items">
@@ -332,10 +339,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Backend -->
         <div class="tech-category">
-          <h3 class="category-title">Backend</h3>
+          <h3 class="category-title">Backend & Datos</h3>
           <div class="tech-items">
             <div class="tech-card">
               <i class="devicon-java-plain colored"></i>
@@ -349,12 +354,14 @@
               <i class="devicon-mysql-plain colored"></i>
               <span>MySQL</span>
             </div>
+            <div class="tech-card">
+              <i class="devicon-supabase-plain colored"></i>
+              <span>Supabase</span>
+            </div>
           </div>
         </div>
-
-        <!-- Herramientas -->
         <div class="tech-category">
-          <h3 class="category-title">Herramientas</h3>
+          <h3 class="category-title">Workflow</h3>
           <div class="tech-items">
             <div class="tech-card">
               <i class="devicon-git-plain colored"></i>
@@ -364,18 +371,24 @@
               <i class="devicon-github-original"></i>
               <span>GitHub</span>
             </div>
+            <div class="tech-card">
+              <i class="devicon-vscode-plain colored"></i>
+              <span>VS Code</span>
+            </div>
+            <div class="tech-card">
+              <i class="devicon-figma-plain colored"></i>
+              <span>Figma</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <footer id="contacto">
       <div class="footer-content">
-        <!-- Información principal -->
         <div class="footer-section footer-about">
           <h3>Angel Rodriguez</h3>
           <p class="footer-description">
-            Desarrollador Full-Stack Junior especializado en crear 
-            experiencias web modernas y funcionales.
+            Desarrollador Full-Stack Junior. Construyo productos digitales sólidos, accesibles y listos para escalar.
           </p>
           <div class="footer-social">
             <a href="https://github.com/angel-rodriguez" target="_blank" class="social-link" aria-label="GitHub">
@@ -394,8 +407,6 @@
             </a>
           </div>
         </div>
-
-        <!-- Navegación rápida -->
         <div class="footer-section footer-links">
           <h4>Navegación</h4>
           <ul>
@@ -405,12 +416,13 @@
             <li><a href="#tecnologias">Tecnologías</a></li>
           </ul>
         </div>
-
-        <!-- Contacto -->
         <div class="footer-section footer-contact">
-          <h4>Contacto</h4>
+          <h4>Contacto directo</h4>
           <div class="contact-item">
-            <i class="devicon-mail"></i>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
             <span>angel.rodriguez@email.com</span>
           </div>
           <div class="contact-item">
@@ -424,15 +436,12 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
               <circle cx="12" cy="10" r="3"/>
             </svg>
-            <span>Colombia</span>
+            <span>Colombia · Remoto</span>
           </div>
         </div>
       </div>
-
-      <!-- Copyright -->
       <div class="footer-bottom">
-        <p>&copy; 2024 Angel Rodriguez. Todos los derechos reservados.</p>
-        <p class="footer-made">Hecho con  mucho ☕</p>
+        <p>&copy; 2024 Angel Rodriguez. Construido con código limpio y mucho ☕.</p>
       </div>
     </footer>
     <script src="./script.js"></script>
