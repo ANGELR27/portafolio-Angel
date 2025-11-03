@@ -22,85 +22,84 @@
     <link rel="icon" type="image/png" href="./public/logos/favicon.png" />
   </head>
   <body>
-    <main id="home" class="principal">
-      <div class="top-navigation">
-        <nav class="menu">
-          <div class="nav-inner">
-            <div class="logo" aria-label="Logo personal">An G</div>
-            <ul class="lista">
-              <li><a href="#home">Inicio</a></li>
-              <li><a href="#sobre-mi">Sobre mí</a></li>
-              <li><a href="#proyectos">Proyectos</a></li>
-              <li><a href="#tecnologias">Tecnologías</a></li>
-              <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <div class="nav-actions">
-              <a class="btn-link" href="mailto:angel.rodriguez@email.com">Agenda una reunión</a>
-              <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="5"/>
-                  <line x1="12" y1="1" x2="12" y2="3"/>
-                  <line x1="12" y1="21" x2="12" y2="23"/>
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                  <line x1="1" y1="12" x2="3" y2="12"/>
-                  <line x1="21" y1="12" x2="23" y2="12"/>
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                </svg>
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-              </button>
-            </div>
+    <main id="home" class="hero">
+      <div class="hero-surface">
+        <nav class="hero-nav">
+          <div class="brand">Angel.</div>
+          <ul class="hero-menu">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#tecnologias">Stack</a></li>
+          </ul>
+          <div class="hero-actions">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+              <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+              <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+              </svg>
+            </button>
           </div>
         </nav>
-      </div>
-      <div id="sobre-mi" class="sobre-mi">
-        <div class="seccion-perfil">
-          <div class="text-sobre-mi">
-            <span class="hero-badge">Disponible para nuevos proyectos</span>
-            <h1>Hola, soy Angel Rodriguez</h1>
+        <section id="sobre-mi" class="hero-content">
+          <div class="hero-text">
+            <span class="hero-label">Disponible para nuevos proyectos</span>
+            <h1>
+              Hola, soy Angel.<br />
+              <span class="gradient-text gradient-1">Desarrollador</span>
+              <span class="gradient-text gradient-2">Full-Stack</span>
+            </h1>
             <p>
-              Desarrollador Full-Stack Junior con foco en crear experiencias digitales limpias, accesibles y eficientes.
-              Me especializo en transformar ideas en productos escalables combinando Java, JavaScript y herramientas modernas impulsadas por IA.
+              Combino diseño, desarrollo y automatización con IA para construir interfaces de alto rendimiento
+              y productos digitales consistentes. Busco crear experiencias memorables con impacto real.
             </p>
-            <div class="role-tags">
-              <span>Frontend</span>
-              <span>Backend</span>
-              <span>IA & Automatización</span>
+            <div class="hero-buttons">
+              <a class="cta-primary" href="#proyectos">Ver portafolio</a>
+              <a class="cta-secondary" href="mailto:angel.rodriguez@email.com">Agendar llamada</a>
             </div>
-            <div class="cta-group">
-              <a class="btn-primary" href="#proyectos">Ver proyectos</a>
-              <a class="btn-secondary" href="#contacto">Contactarme</a>
-            </div>
-            <div class="stats-grid">
-              <div class="stat">
-                <span class="stat-value">+10</span>
-                <span class="stat-label">Proyectos lanzados</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">2 años</span>
-                <span class="stat-label">Construyendo productos</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">+6</span>
-                <span class="stat-label">Stack principal</span>
-              </div>
+            <div class="hero-stats">
+              <article class="stat-card">
+                <span class="stat-number">+10</span>
+                <span class="stat-caption">Proyectos lanzados</span>
+              </article>
+              <article class="stat-card">
+                <span class="stat-number">2 años</span>
+                <span class="stat-caption">Experiencia creando productos</span>
+              </article>
+              <article class="stat-card">
+                <span class="stat-number">+6</span>
+                <span class="stat-caption">Tecnologías clave</span>
+              </article>
             </div>
           </div>
-          <div class="img-perfil">
-            <div class="perfil-card">
-              <img class="perfil" src="./public/img/perfil.png" alt="perfil" />
-              <div class="perfil-overlay">
-                <p>Enfocado en entregar soluciones integrales y documentación clara para equipos multidisciplinarios.</p>
+          <div class="hero-visual">
+            <div class="visual-card">
+              <img class="hero-avatar" src="./public/img/perfil.png" alt="Retrato de Angel" />
+              <div class="visual-overlay">
+                <p>Soluciones a medida, documentación clara y acompañamiento continuo.</p>
               </div>
             </div>
+            <span class="floating-shape shape-pill"></span>
+            <span class="floating-shape shape-ring"></span>
+            <span class="floating-shape shape-cube"></span>
           </div>
-        </div>
+        </section>
       </div>
+      <span class="hero-glow glow-1"></span>
+      <span class="hero-glow glow-2"></span>
+      <span class="hero-glow glow-3"></span>
     </main>
-    <div class="experiencia" aria-labelledby="titulo-experiencia">
+    <section class="experiencia section-wrapper" aria-labelledby="titulo-experiencia">
       <h2 id="titulo-experiencia" class="titulo-experiencia">Experiencia y formación</h2>
       <p class="experience-intro">
         Trabajo bajo metodologías colaborativas, priorizando la calidad del código, la comunicación con stakeholders y la entrega continua.
@@ -170,8 +169,8 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div id="proyectos" class="proyectos">
+    </section>
+    <section id="proyectos" class="proyectos section-wrapper">
       <h2 class="titulo-proyectos">Selección de proyectos</h2>
       <p class="projects-intro">Soluciones con foco en rendimiento, diseño sustentable y experiencias centradas en el usuario.</p>
       <div class="contenedor-proyectos">
@@ -307,8 +306,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <section class="skill" id="tecnologias">
+    </section>
+    <section class="skill section-wrapper" id="tecnologias">
       <div class="skill-header">
         <h2 class="titulo-skill">Stack y herramientas</h2>
         <p>Combino tecnologías modernas para entregar soluciones completas, mantenibles y orientadas a negocio.</p>
@@ -383,7 +382,7 @@
         </div>
       </div>
     </section>
-    <footer id="contacto">
+    <footer id="contacto" class="section-wrapper">
       <div class="footer-content">
         <div class="footer-section footer-about">
           <h3>Angel Rodriguez</h3>
