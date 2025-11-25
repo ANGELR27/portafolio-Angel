@@ -84,7 +84,6 @@ class ThreeSceneManager {
         const isDarkTheme = document.body.classList.contains('dark-theme');
         const color = isDarkTheme ? 0x00d9ff : 0x6366f1;
 
-        // Create wireframe cube
         const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
         const edges = new THREE.EdgesGeometry(geometry);
         const material = new THREE.LineBasicMaterial({
@@ -111,7 +110,7 @@ class ThreeSceneManager {
         this.scenes.push(sceneObj);
     }
 
-    // About Section - Particle Sphere (relocated from Hero)
+    // About Section - Particle Sphere
     createAboutSphere() {
         const base = this.createSceneBase('canvas-about-3d', 5);
         if (!base) return;
@@ -119,7 +118,6 @@ class ThreeSceneManager {
         const isDarkTheme = document.body.classList.contains('dark-theme');
         const color = isDarkTheme ? 0x00d9ff : 0x6366f1;
 
-        // Create particle sphere
         const geometry = new THREE.IcosahedronGeometry(2, 4);
         const positions = geometry.attributes.position.array;
 
@@ -138,7 +136,6 @@ class ThreeSceneManager {
         const particleSystem = new THREE.Points(particlesGeometry, particleMaterial);
         base.scene.add(particleSystem);
 
-        // Add wireframe
         const wireframeMaterial = new THREE.LineBasicMaterial({
             color: color,
             transparent: true,
@@ -150,7 +147,6 @@ class ThreeSceneManager {
         );
         base.scene.add(wireframe);
 
-        // Mouse tracking
         const mouse = { x: 0, y: 0 };
         const targetRotation = { x: 0, y: 0 };
         const currentRotation = { x: 0, y: 0 };
@@ -197,7 +193,6 @@ class ThreeSceneManager {
         const isDarkTheme = document.body.classList.contains('dark-theme');
         const color = isDarkTheme ? 0x00d9ff : 0x6366f1;
 
-        // Create wireframe torus
         const geometry = new THREE.TorusGeometry(0.8, 0.3, 16, 50);
         const edges = new THREE.EdgesGeometry(geometry);
         const material = new THREE.LineBasicMaterial({
@@ -233,7 +228,6 @@ class ThreeSceneManager {
         const isDarkTheme = document.body.classList.contains('dark-theme');
         const color = isDarkTheme ? 0x00d9ff : 0x6366f1;
 
-        // Create wireframe icosahedron
         const geometry = new THREE.IcosahedronGeometry(1, 0);
         const edges = new THREE.EdgesGeometry(geometry);
         const material = new THREE.LineBasicMaterial({
@@ -263,7 +257,6 @@ class ThreeSceneManager {
     animate() {
         requestAnimationFrame(() => this.animate());
 
-        // Animate all scenes
         this.scenes.forEach(sceneObj => {
             if (sceneObj.animate) {
                 sceneObj.animate();
