@@ -115,6 +115,8 @@
       </div>
 
       <div class="hero-visual-container">
+        <!-- 3D Minimalist Cube -->
+        <div id="canvas-hero-3d"></div>
         <!-- 3D Abstract Elements managed by CSS/JS -->
         <div class="abstract-shape shape-1"></div>
         <div class="abstract-shape shape-2"></div>
@@ -137,6 +139,8 @@
   </main>
   <!-- ABOUT SECTION -->
   <section id="sobre-mi" class="section-wrapper">
+    <!-- 3D Particle Sphere (relocated) -->
+    <div id="canvas-about-3d"></div>
     <div class="section-header">
       <span class="section-subtitle">Mi Trayectoria</span>
       <h2 class="section-title">Experiencia & <span class="gradient-text">Formación</span></h2>
@@ -193,6 +197,8 @@
 
   <!-- PROJECTS SECTION (BENTO GRID) -->
   <section id="proyectos" class="section-wrapper">
+    <!-- 3D Floating Torus -->
+    <div id="canvas-projects-3d"></div>
     <div class="section-header">
       <span class="section-subtitle">Portafolio</span>
       <h2 class="section-title">Proyectos <span class="gradient-text">Destacados</span></h2>
@@ -205,7 +211,7 @@
       <!-- Project 1 -->
       <article class="project-card-cinematic" data-scroll-speed="0.5">
         <div class="project-visual-cinematic">
-          <img src="./public/img/proyecto1.png" alt="E-commerce Dashboard" loading="lazy" />
+          <img src="./public/img/editor1.png" alt="E-commerce Dashboard" loading="lazy" />
           <div class="visual-overlay"></div>
         </div>
         <div class="project-info-cinematic">
@@ -228,7 +234,7 @@
       <!-- Project 2 -->
       <article class="project-card-cinematic" data-scroll-speed="0.5">
         <div class="project-visual-cinematic">
-          <img src="./public/img/proyecto2.png" alt="Financial App" loading="lazy" />
+          <img src="./public/img/motohub1.png" alt="Financial App" loading="lazy" />
           <div class="visual-overlay"></div>
         </div>
         <div class="project-info-cinematic">
@@ -251,7 +257,7 @@
       <!-- Project 3 -->
       <article class="project-card-cinematic" data-scroll-speed="0.5">
         <div class="project-visual-cinematic">
-          <img src="./public/img/proyecto3.png" alt="AI Art Gallery" loading="lazy" />
+          <img src="./public/img/moon2.png" alt="AI Art Gallery" loading="lazy" />
           <div class="visual-overlay"></div>
         </div>
         <div class="project-info-cinematic">
@@ -274,6 +280,8 @@
 
   </section>
   <section class="skill section-wrapper" id="tecnologias">
+    <!-- 3D Minimalist Icosahedron -->
+    <div id="canvas-tech-3d"></div>
     <div class="skill-header">
       <h2 class="titulo-skill">Stack y herramientas</h2>
       <p>Combino tecnologías modernas para entregar soluciones completas, mantenibles y orientadas a negocio.</p>
@@ -411,8 +419,11 @@
       <p>&copy; 2024 Angel Rodriguez. Construido con código limpio y mucho ☕.</p>
     </div>
   </footer>
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./3d-scene.js"></script>
   <script src="./script.js"></script>
 </body>
 

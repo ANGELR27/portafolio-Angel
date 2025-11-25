@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .from('.glass-card-showcase', {
       x: 50,
       opacity: 0,
-      rotation: 10,
-      duration: 1.2,
+      rotation: 5,
+      duration: 1.4,
       ease: 'power3.out'
     }, '-=1');
 
@@ -104,11 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from(card, {
       y: 100,
       opacity: 0,
-      duration: 1,
+      duration: 1.2,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: card,
-        start: 'top 85%'
+        start: 'top 90%', // Trigger earlier
+        toggleActions: 'play none none reverse'
       }
     });
   });
@@ -119,49 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   const techCards = document.querySelectorAll('.tech-card');
 
-  // Floating Animation (Randomized)
-  techCards.forEach(card => {
-    gsap.to(card, {
-      y: 'random(-10, 10)',
-      duration: 'random(2, 4)',
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-      delay: 'random(0, 2)'
-    });
-
-    // Magnetic Effect
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      gsap.to(card, {
-        x: x * 0.3, // Magnetic strength
-        y: y * 0.3,
-        duration: 0.3,
-        ease: 'power2.out',
-        overwrite: 'auto' // Prevent conflict with float
-      });
-    });
-
-    card.addEventListener('mouseleave', () => {
-      gsap.to(card, {
-        x: 0,
-        y: 0, // This might conflict with float, but float uses relative values usually. 
-        // Better to let float resume or reset to a base.
-        // For simplicity, we just animate back to 0 offset.
-        duration: 0.8,
-        ease: 'elastic.out(1, 0.3)'
-      });
-    });
-  });
-
-  // Staggered Reveal for Skills
+  // Staggered Reveal for Skills (MUST happen first, before floating)
   gsap.from('.tech-card', {
     scrollTrigger: {
       trigger: '.tecnologias-grid',
       start: 'top 85%',
+      once: true // Only trigger once to prevent re-animation bug
     },
     scale: 0,
     opacity: 0,
@@ -172,6 +136,62 @@ document.addEventListener('DOMContentLoaded', () => {
       from: 'center'
     },
     ease: 'back.out(1.7)'
+  });
+
+  // Floating Animation (Randomized) - Applied after reveal
+  techCards.forEach(card => {
+    // Random float parameters
+    const randomY = gsap.utils.random(-10, 10);
+    const randomDuration = gsap.utils.random(2, 4);
+    const randomDelay = gsap.utils.random(0, 2);
+
+    // Create the float tween
+    const floatTween = gsap.to(card, {
+      y: randomY,
+      duration: randomDuration,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      delay: randomDelay,
+      paused: false
+    });
+
+    // Magnetic Effect
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      // Update custom properties for gradient effect
+      card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+
+      // Pause float during interaction
+      floatTween.pause();
+
+      gsap.to(card, {
+        x: x * 0.2, // Reduced strength for better control
+        y: y * 0.2,
+        rotation: x * 0.05,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Reset position
+      gsap.to(card, {
+        x: 0,
+        y: 0, // Reset to 0 first
+        rotation: 0,
+        duration: 0.6,
+        ease: 'elastic.out(1, 0.4)',
+        onComplete: () => {
+          // Resume float animation smoothly
+          floatTween.resume();
+        }
+      });
+    });
   });
 
   // ============================================

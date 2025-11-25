@@ -46,16 +46,16 @@
 [data-theme="light"] {
   --bg-body: #f8fafc;
   --bg-surface: #ffffff;
-  --bg-card: rgba(0, 0, 0, 0.02);
+  --bg-card: rgba(0, 0, 0, 0.04);
 
   --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
 
-  --border-light: rgba(0, 0, 0, 0.05);
-  --border-hover: rgba(0, 0, 0, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(0, 0, 0, 0.05);
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 /* Base Reset & Typography */
@@ -181,26 +181,26 @@ body:hover .cursor-outline {
 /* Navigation */
 .hero-nav {
   position: fixed;
-  top: 20px;
+  top: 24px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
   max-width: var(--container-width);
-  padding: 16px 32px;
+  padding: 12px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 100px;
+  border-radius: 24px;
   z-index: 100;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel {
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .brand-symbol {
@@ -320,7 +320,7 @@ body:hover .cursor-outline {
   align-items: center;
   gap: 8px;
   padding: 16px 32px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
   color: var(--text-primary);
   border: 1px solid var(--border-light);
   border-radius: 100px;
@@ -330,8 +330,8 @@ body:hover .cursor-outline {
 }
 
 .cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--text-primary);
+  background: var(--glass-bg);
+  border-color: var(--border-hover);
 }
 
 /* Visual Showcase */
@@ -343,17 +343,135 @@ body:hover .cursor-outline {
   justify-content: center;
 }
 
+/* 3D Canvas Containers - Multiple Scenes */
+
+/* Hero Section - Minimalist Cube */
+#canvas-hero-3d {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#canvas-hero-3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* About Section - Particle Sphere */
+#canvas-about-3d {
+  position: absolute;
+  top: -50px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+#canvas-about-3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Projects Section - Floating Torus */
+#canvas-projects-3d {
+  position: absolute;
+  top: -80px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+#canvas-projects-3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Tech Stack Section - Icosahedron */
+#canvas-tech-3d {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 250px;
+  height: 250px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#canvas-tech-3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Responsive adjustments for 3D elements */
+@media (max-width: 968px) {
+
+  #canvas-about-3d,
+  #canvas-projects-3d,
+  #canvas-tech-3d {
+    display: none;
+  }
+
+  #canvas-hero-3d {
+    opacity: 0.5;
+  }
+}
+
+/* Abstract shapes - decorative background elements */
+.abstract-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+  animation: float 15s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: -7s;
+}
+
 .glass-card-showcase {
   width: 100%;
   max-width: 400px;
   padding: 24px;
-  background: rgba(20, 20, 20, 0.6);
+  background: rgba(20, 20, 20, 0.9);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transform: rotate(-5deg);
   transition: transform 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+[data-theme="light"] .glass-card-showcase {
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .glass-card-showcase:hover {
@@ -390,27 +508,27 @@ body:hover .cursor-outline {
 }
 
 pre {
-  color: #a9b7c6;
+  color: #e2e8f0;
 }
 
 .k {
-  color: #cc7832;
+  color: #f59e0b;
 }
 
 .v {
-  color: #a9b7c6;
+  color: #e2e8f0;
 }
 
 .s {
-  color: #6a8759;
+  color: #86efac;
 }
 
 .p {
-  color: #9876aa;
+  color: #c084fc;
 }
 
 .f {
-  color: #61afef;
+  color: #60a5fa;
 }
 
 /* Status Badge */
@@ -596,7 +714,7 @@ pre {
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-card);
   border: 1px solid var(--glass-border);
   border-radius: 14px;
   cursor: pointer;
@@ -630,7 +748,7 @@ pre {
   gap: 8px;
   padding: 6px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
   color: var(--text-primary);
   font-size: 13px;
   letter-spacing: 0.6px;
@@ -728,7 +846,7 @@ pre {
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--bg-card);
   border-radius: 999px;
   font-size: 12px;
   letter-spacing: 0.6px;
@@ -751,11 +869,11 @@ pre {
   margin: 30px 0;
   padding: 28px 32px;
   border-radius: 22px;
-  background: rgba(12, 10, 22, 0.55);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 45px rgba(5, 7, 20, 0.45);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 20px 45px rgba(5, 7, 20, 0.1);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -796,7 +914,7 @@ pre {
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
   color: var(--text-primary);
   letter-spacing: 0.2px;
 }
@@ -824,8 +942,8 @@ pre {
 .stat-card {
   padding: 18px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
   backdrop-filter: blur(18px);
   transition: transform var(--transition-base), border-color var(--transition-base);
 }
@@ -891,8 +1009,13 @@ pre {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(8, 6, 16, 0.85);
   font-size: 13px;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   backdrop-filter: blur(16px);
+}
+
+[data-theme="light"] .visual-overlay {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .floating-shape {
@@ -1236,6 +1359,8 @@ pre {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 12px;
+  color: var(--text-primary);
+  z-index: 1;
 }
 
 .tech-category {
@@ -1267,8 +1392,8 @@ pre {
 
 .tech-items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
 }
 
 .tech-card {
@@ -1276,43 +1401,53 @@ pre {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 20px;
-  background: var(--bg-hover);
-  border-radius: 24px;
-  /* Soft rounded rect initially */
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
+  gap: 12px;
+  padding: 24px;
+  background: var(--bg-card);
   border: 1px solid var(--border-light);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.tech-card:hover::before {
+  opacity: 1;
 }
 
 .tech-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent-primary);
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.25);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--glass-highlight);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.tech-card i {
+.tech-card i,
+.tech-card svg {
   font-size: 40px;
-  transition: transform 0.4s ease;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-  color: #ffffff !important;
-  /* Force white for visibility */
+  transition: transform 0.3s ease;
 }
 
-.tech-card:hover i {
-  transform: scale(1.1) rotate(5deg);
-  color: var(--accent-primary) !important;
-  /* Color on hover */
+.tech-card:hover i,
+.tech-card:hover svg {
+  transform: scale(1.1);
 }
 
 .tech-card span {
-  font-size: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
   font-weight: 500;
-  color: var(--text-tertiary);
-  font-family: 'Inter', sans-serif;
-  text-align: center;
 }
 
 /* Colores de iconos */
@@ -2180,8 +2315,16 @@ html {
   transition: opacity 0.5s ease;
 }
 
+[data-theme="light"] .visual-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+}
+
 .project-card-cinematic:hover .visual-overlay {
   opacity: 0.8;
+}
+
+[data-theme="light"] .project-card-cinematic:hover .visual-overlay {
+  opacity: 0.5;
 }
 
 .project-info-cinematic {
@@ -2294,4 +2437,166 @@ html {
     opacity: 1;
     transform: none;
   }
+}
+
+/* ============================================ */
+/* TECHNOLOGY SECTION STYLES */
+/* ============================================ */
+
+.skill {
+  padding: 120px 0;
+}
+
+.skill-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.titulo-skill {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.skill-header p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tecnologias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.tech-category {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-category:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.category-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.tech-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  background: var(--glass-bg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card i {
+  font-size: 48px;
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover i {
+  transform: scale(1.1);
+}
+
+.tech-card span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.tech-card:hover span {
+  color: var(--text-primary);
+}
+
+/* GitHub icon special styling for visibility */
+.tech-card i.devicon-github-original {
+  color: var(--text-primary);
+}
+
+/* Ensure all devicon icons maintain their brand colors */
+.tech-card i[class*="devicon-"] {
+  opacity: 1 !important;
+}
+
+/* Additional visibility for light mode */
+[data-theme="light"] .tech-card i[class*="devicon-"] {
+  filter: saturate(1.2) brightness(0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tecnologias-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .tech-items {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 16px;
+  }
+
+  .tech-card {
+    padding: 16px;
+  }
+
+  .tech-card i {
+    font-size: 36px;
+  }
+
+  .tech-card span {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.tech-card:hover span {
+  color: var(--text-primary);
+}
+
+/* Ensure devicon colors are visible */
+.tech-card i.colored {
+  color: inherit;
+}
+
+/* GitHub icon special styling for visibility */
+.tech-card i.devicon-github-original {
+  color: var(--text-primary);
 }
