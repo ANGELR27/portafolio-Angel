@@ -1,448 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🥱 Segundo portafolio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Estilos -->
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-    <link rel="icon" type="image/png" href="./public/logos/favicon.png" />
-  </head>
-  <body>
-    <main id="home" class="hero">
-      <div class="hero-surface">
-        <nav class="hero-nav">
-          <div class="brand">Angel.</div>
-          <ul class="hero-menu">
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#tecnologias">Stack</a></li>
-          </ul>
-          <div class="hero-actions">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-              <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-              </svg>
-              <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-              </svg>
-            </button>
-          </div>
-        </nav>
-        <section id="sobre-mi" class="hero-content">
-          <div class="hero-text">
-            <span class="hero-label">Disponible para nuevos proyectos</span>
-            <h1>
-              Hola, soy Angel.<br />
-              <span class="gradient-text gradient-1">Desarrollador</span>
-              <span class="gradient-text gradient-2">Full-Stack</span>
-            </h1>
-            <p>
-              Combino diseño, desarrollo y automatización con IA para construir interfaces de alto rendimiento
-              y productos digitales consistentes. Busco crear experiencias memorables con impacto real.
-            </p>
-            <div class="hero-buttons">
-              <a class="cta-primary" href="#proyectos">Ver portafolio</a>
-              <a class="cta-secondary" href="mailto:angel.rodriguez@email.com">Agendar llamada</a>
-            </div>
-            <div class="hero-stats">
-              <article class="stat-card">
-                <span class="stat-number">+10</span>
-                <span class="stat-caption">Proyectos lanzados</span>
-              </article>
-              <article class="stat-card">
-                <span class="stat-number">2 años</span>
-                <span class="stat-caption">Experiencia creando productos</span>
-              </article>
-              <article class="stat-card">
-                <span class="stat-number">+6</span>
-                <span class="stat-caption">Tecnologías clave</span>
-              </article>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="visual-card">
-              <img class="hero-avatar" src="./public/img/perfil.png" alt="Retrato de Angel" />
-              <div class="visual-overlay">
-                <p>Soluciones a medida, documentación clara y acompañamiento continuo.</p>
-              </div>
-            </div>
-            <span class="floating-shape shape-pill"></span>
-            <span class="floating-shape shape-ring"></span>
-            <span class="floating-shape shape-cube"></span>
-          </div>
-        </section>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angel Rodriguez | Creative Developer</title>
+  <meta name="description"
+    content="Desarrollador Full-Stack especializado en experiencias web inmersivas, diseño UI/UX y soluciones escalables." />
+  <meta name="keywords" content="Desarrollador Web, Full Stack, Frontend, Backend, UI/UX, React, Node.js, Colombia" />
+  <meta name="author" content="Angel Rodriguez" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://angel-rodriguez.com/" />
+  <meta property="og:title" content="Angel Rodriguez | Creative Developer" />
+  <meta property="og:description"
+    content="Desarrollador Full-Stack especializado en experiencias web inmersivas y diseño premium." />
+  <meta property="og:image" content="https://angel-rodriguez.com/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://angel-rodriguez.com/" />
+  <meta property="twitter:title" content="Angel Rodriguez | Creative Developer" />
+  <meta property="twitter:description"
+    content="Desarrollador Full-Stack especializado en experiencias web inmersivas y diseño premium." />
+  <meta property="twitter:image" content="https://angel-rodriguez.com/og-image.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="icon" type="image/png" href="./public/logos/favicon.png" />
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <main id="home" class="hero">
+    <div class="hero-background">
+      <div class="gradient-sphere sphere-1"></div>
+      <div class="gradient-sphere sphere-2"></div>
+      <div class="noise-overlay"></div>
+    </div>
+
+    <nav class="hero-nav glass-panel">
+      <div class="brand">
+        <span class="brand-symbol">A.</span>
       </div>
-      <span class="hero-glow glow-1"></span>
-      <span class="hero-glow glow-2"></span>
-      <span class="hero-glow glow-3"></span>
-    </main>
-    <section class="experiencia section-wrapper" aria-labelledby="titulo-experiencia">
-      <h2 id="titulo-experiencia" class="titulo-experiencia">Experiencia y formación</h2>
-      <p class="experience-intro">
-        Trabajo bajo metodologías colaborativas, priorizando la calidad del código, la comunicación con stakeholders y la entrega continua.
-      </p>
-      <div class="timeline">
-        <div class="contenedor-experiencia">
-          <span class="timeline-date">Jun 2024 — Actualidad</span>
-          <div class="lugar-experiencia">
-            <img
-              class="logo-generation"
-              src="./public/img/generation.png"
-              alt="Logo Generation"
-            />
-            <div>
-              <h3>Front-end Developer</h3>
-              <p class="experience-summary">Generation Latam · Programa intensivo de proyectos</p>
-            </div>
-          </div>
-          <ul>
-            <li>Implementé interfaces responsive optimizadas para Core Web Vitals.</li>
-            <li>Diseñé experiencias UI/UX consistentes con sistemas de diseño reutilizables.</li>
-            <li>Construí integraciones con APIs externas y manejé estados complejos en equipo.</li>
-          </ul>
+      <ul class="hero-menu">
+        <li><a href="#home" class="nav-link">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#tecnologias" class="nav-link">Stack</a></li>
+      </ul>
+      <div class="hero-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <a href="#contacto" class="cta-nav">Hablemos</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <div class="hero-text-container">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Disponible para proyectos
         </div>
-        <div class="contenedor-experiencia">
-          <span class="timeline-date">Dic 2022 — Actualidad</span>
-          <div class="lugar-experiencia">
-            <img
-              class="logo-generation"
-              src="./public/img/Logo-sena.png"
-              alt="Logo SENA"
-            />
-            <div>
-              <h3>Tecnólogo en ADSO</h3>
-              <p class="experience-summary">SENA · Análisis y Desarrollo de Software</p>
-            </div>
-          </div>
-          <ul>
-            <li>Modelé soluciones con UML y enfoques orientados a objetos.</li>
-            <li>Desarrollé APIs REST documentadas con énfasis en seguridad y pruebas.</li>
-            <li>Gestioné proyectos académicos completos desde la planificación hasta el despliegue.</li>
-          </ul>
-        </div>
-        <div class="contenedor-experiencia">
-          <span class="timeline-date">2023 — Actualidad</span>
-          <div class="lugar-experiencia">
-            <svg class="logo-generation" width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="100" height="100" rx="20" fill="url(#gradient)"/>
-              <path d="M30 35L40 45L30 55M50 55H70" stroke="white" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="75" cy="25" r="3" fill="#4ADE80"/>
-              <defs>
-                <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="100">
-                  <stop offset="0%" stop-color="#667eea"/>
-                  <stop offset="100%" stop-color="#764ba2"/>
-                </linearGradient>
-              </defs>
+        <h1 class="hero-title">
+          <span class="reveal-text">Diseñando el</span>
+          <span class="reveal-text gradient-text">Futuro Digital</span>
+        </h1>
+        <p class="hero-description reveal-text-delay">
+          Desarrollador Full-Stack especializado en crear experiencias web inmersivas,
+          rápidas y escalables que fusionan diseño premium con ingeniería robusta.
+        </p>
+        <div class="hero-cta-group reveal-text-delay">
+          <a class="cta-primary magnetic-btn" href="#proyectos">
+            <span>Ver Trabajo</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-            <div>
-              <h3>IA & Vibe Coding Specialist</h3>
-              <p class="experience-summary">Laboratorios personales</p>
-            </div>
-          </div>
-          <ul>
-            <li>Automatizo flujos de desarrollo con agentes y herramientas de IA.</li>
-            <li>Construí un editor colaborativo en tiempo real con mensajería en vivo.</li>
-            <li>Desarrollé soluciones end-to-end con streaming, autenticación y notificaciones.</li>
-          </ul>
+          </a>
+          <a class="cta-secondary magnetic-btn" href="https://github.com/angel-rodriguez" target="_blank">
+            <i class="devicon-github-original"></i>
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
-    </section>
-    <section id="proyectos" class="proyectos section-wrapper">
-      <h2 class="titulo-proyectos">Selección de proyectos</h2>
-      <p class="projects-intro">Soluciones con foco en rendimiento, diseño sustentable y experiencias centradas en el usuario.</p>
-      <div class="contenedor-proyectos">
-        <div class="card-proyecto">
-          <img src="./public/img/pokemon.png" alt="Interfaz PokéAPI" />
-          <div class="text-card">
-            <div class="ver-proyecto">
-              <h3>PokéAPI Explorer</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
+
+      <div class="hero-visual-container">
+        <!-- 3D Abstract Elements managed by CSS/JS -->
+        <div class="abstract-shape shape-1"></div>
+        <div class="abstract-shape shape-2"></div>
+        <div class="glass-card-showcase">
+          <div class="code-snippet">
+            <div class="dot-group">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
             </div>
-            <p>
-              Buscador multiplataforma con filtros dinámicos, caching de peticiones y tipografías accesibles para explorar datos oficiales de la PokéAPI.
-            </p>
-            <div class="chip-group">
-              <span class="chip">Front-end</span>
-              <span class="chip">REST API</span>
-              <span class="chip">Performance</span>
-            </div>
-            <div class="tecnologias-card">
-              <i class="devicon-html5-plain"></i>
-              <i class="devicon-css3-plain"></i>
-              <i class="devicon-javascript-plain"></i>
-            </div>
-          </div>
-        </div>
-        <div class="card-proyecto card-editor">
-          <div class="image-carousel">
-            <img src="./public/img/Motohub1.png" alt="MotoHub - catálogo" class="carousel-img active" />
-            <img src="./public/img/motohub2.png" alt="MotoHub - checkout" class="carousel-img" />
-            <div class="carousel-indicators">
-              <span class="indicator active"></span>
-              <span class="indicator"></span>
-            </div>
-          </div>
-          <div class="text-card">
-            <div class="ver-proyecto">
-              <h3>MotoHub</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
-            </div>
-            <p>
-              E-commerce deportivo con arquitectura modular, componentes reutilizables y flujos de compra optimizados para conversiones móviles.
-            </p>
-            <div class="chip-group">
-              <span class="chip">Diseño UI</span>
-              <span class="chip">Responsive</span>
-              <span class="chip">Trabajo en equipo</span>
-            </div>
-            <div class="tecnologias-card">
-              <i class="devicon-html5-plain"></i>
-              <i class="devicon-css3-plain"></i>
-              <i class="devicon-javascript-plain"></i>
-            </div>
-          </div>
-        </div>
-        <div class="card-proyecto card-editor">
-          <div class="image-carousel">
-            <img src="./public/img/portafolio1.png" alt="Portafolio - vista principal" class="carousel-img active" />
-            <img src="./public/img/portafiolio 2.png" alt="Portafolio - modo oscuro" class="carousel-img" />
-            <div class="carousel-indicators">
-              <span class="indicator active"></span>
-              <span class="indicator"></span>
-            </div>
-          </div>
-          <div class="text-card">
-            <div class="ver-proyecto">
-              <h3>Portafolio Web</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
-            </div>
-            <p>
-              Sitio personal con modo oscuro/claro, animaciones suaves e integración con herramientas no-code para gestionar contenido.
-            </p>
-            <div class="chip-group">
-              <span class="chip">UI Systems</span>
-              <span class="chip">Animaciones</span>
-            </div>
-            <div class="tecnologias-card">
-              <i class="devicon-html5-plain"></i>
-              <i class="devicon-css3-plain"></i>
-              <i class="devicon-javascript-plain"></i>
-            </div>
-          </div>
-        </div>
-        <div class="card-proyecto">
-          <img src="./public/img/crud.png" alt="Panel CRUD" />
-          <div class="text-card">
-            <div class="ver-proyecto">
-              <h3>Gestor de datos Java</h3>
-              <button onclick="window.open('https://github.com/angel-rodriguez', '_blank')">Repositorio</button>
-            </div>
-            <p>
-              Aplicación CRUD con Java y MySQL que incluye validaciones, exportación CSV y despliegue empaquetado para equipos internos.
-            </p>
-            <div class="chip-group">
-              <span class="chip">Back-end</span>
-              <span class="chip">Bases de datos</span>
-            </div>
-            <div class="tecnologias-card">
-              <i class="devicon-java-plain"></i>
-              <i class="devicon-mysql-plain"></i>
-              <i class="devicon-git-plain"></i>
-            </div>
-          </div>
-        </div>
-        <div class="card-proyecto card-editor">
-          <div class="image-carousel">
-            <img src="./public/img/editor1.png" alt="Editor colaborativo - modo oscuro" class="carousel-img active" />
-            <img src="./public/img/editor2.png" alt="Editor colaborativo - chat" class="carousel-img" />
-            <img src="./public/img/editor3.png" alt="Editor colaborativo - sesión" class="carousel-img" />
-            <div class="carousel-indicators">
-              <span class="indicator active"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
-            </div>
-          </div>
-          <div class="text-card">
-            <div class="ver-proyecto">
-              <h3>Editor colaborativo</h3>
-              <button onclick="window.open('https://angr.vercel.app', '_blank')">Ver demo</button>
-            </div>
-            <p>
-              Plataforma en tiempo real con colaboración simultánea, chat contextual y sincronización mediante Supabase y WebSockets.
-            </p>
-            <div class="chip-group">
-              <span class="chip">Tiempo real</span>
-              <span class="chip">IA copiloto</span>
-            </div>
-            <div class="tecnologias-card">
-              <i class="devicon-react-original colored"></i>
-              <i class="devicon-nodejs-plain colored"></i>
-              <i class="devicon-javascript-plain colored"></i>
-              <i class="devicon-supabase-plain colored"></i>
-            </div>
+            <pre><code><span class="k">const</span> <span class="v">developer</span> = {
+  <span class="p">name</span>: <span class="s">"Angel"</span>,
+  <span class="p">skills</span>: [<span class="s">"Creative"</span>, <span class="s">"FullStack"</span>],
+  <span class="f">build</span>: () => <span class="s">"Awesome"</span>
+};</code></pre>
           </div>
         </div>
       </div>
     </section>
-    <section class="skill section-wrapper" id="tecnologias">
-      <div class="skill-header">
-        <h2 class="titulo-skill">Stack y herramientas</h2>
-        <p>Combino tecnologías modernas para entregar soluciones completas, mantenibles y orientadas a negocio.</p>
-      </div>
-      <div class="tecnologias-grid">
-        <div class="tech-category">
-          <h3 class="category-title">Frontend</h3>
-          <div class="tech-items">
-            <div class="tech-card">
-              <i class="devicon-html5-plain colored"></i>
-              <span>HTML5</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-css3-plain colored"></i>
-              <span>CSS3</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-javascript-plain colored"></i>
-              <span>JavaScript</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-react-original colored"></i>
-              <span>React</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-bootstrap-plain colored"></i>
-              <span>Bootstrap</span>
-            </div>
-          </div>
+  </main>
+  <!-- ABOUT SECTION -->
+  <section id="sobre-mi" class="section-wrapper">
+    <div class="section-header">
+      <span class="section-subtitle">Mi Trayectoria</span>
+      <h2 class="section-title">Experiencia & <span class="gradient-text">Formación</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card glass-panel">
+        <div class="card-icon">
+          <i class="devicon-google-plain"></i>
         </div>
-        <div class="tech-category">
-          <h3 class="category-title">Backend & Datos</h3>
-          <div class="tech-items">
-            <div class="tech-card">
-              <i class="devicon-java-plain colored"></i>
-              <span>Java</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-nodejs-plain colored"></i>
-              <span>Node.js</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-mysql-plain colored"></i>
-              <span>MySQL</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-supabase-plain colored"></i>
-              <span>Supabase</span>
-            </div>
-          </div>
-        </div>
-        <div class="tech-category">
-          <h3 class="category-title">Workflow</h3>
-          <div class="tech-items">
-            <div class="tech-card">
-              <i class="devicon-git-plain colored"></i>
-              <span>Git</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-github-original"></i>
-              <span>GitHub</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-vscode-plain colored"></i>
-              <span>VS Code</span>
-            </div>
-            <div class="tech-card">
-              <i class="devicon-figma-plain colored"></i>
-              <span>Figma</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer id="contacto" class="section-wrapper">
-      <div class="footer-content">
-        <div class="footer-section footer-about">
-          <h3>Angel Rodriguez</h3>
-          <p class="footer-description">
-            Desarrollador Full-Stack Junior. Construyo productos digitales sólidos, accesibles y listos para escalar.
+        <div class="card-content">
+          <span class="date">Jun 2024 — Actualidad</span>
+          <h3>Front-end Developer</h3>
+          <p class="company">Generation Latam</p>
+          <p class="description">
+            Desarrollo de interfaces responsivas y accesibles. Liderazgo técnico en proyectos grupales y optimización de
+            Core Web Vitals.
           </p>
-          <div class="footer-social">
-            <a href="https://github.com/angel-rodriguez" target="_blank" class="social-link" aria-label="GitHub">
-              <i class="devicon-github-original"></i>
-            </a>
-            <a href="https://linkedin.com/in/angel-rodriguez" target="_blank" class="social-link" aria-label="LinkedIn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <a href="mailto:angel.rodriguez@email.com" target="_blank" class="social-link" aria-label="Email">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </a>
+        </div>
+      </div>
+
+      <div class="about-card glass-panel">
+        <div class="card-icon">
+          <i class="devicon-java-plain"></i>
+        </div>
+        <div class="card-content">
+          <span class="date">Dic 2022 — Actualidad</span>
+          <h3>Tecnólogo ADSO</h3>
+          <p class="company">SENA</p>
+          <p class="description">
+            Análisis y desarrollo de software. Arquitectura de microservicios, bases de datos SQL y metodologías ágiles.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-card glass-panel highlight-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="date">2023 — Actualidad</span>
+          <h3>AI & Vibe Coding</h3>
+          <p class="company">Laboratorios Personales</p>
+          <p class="description">
+            Exploración de agentes autónomos, LLMs y herramientas de generación de código para acelerar flujos de
+            trabajo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION (BENTO GRID) -->
+  <section id="proyectos" class="section-wrapper">
+    <div class="section-header">
+      <span class="section-subtitle">Portafolio</span>
+      <h2 class="section-title">Proyectos <span class="gradient-text">Destacados</span></h2>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Project 1: Large Feature -->
+      <article class="bento-item item-large glass-panel">
+        <div class="bento-content">
+          <div class="bento-tags">
+            <span class="tag">React</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Real-time</span>
+          </div>
+          <h3>Editor Colaborativo IA</h3>
+          <p>Plataforma de edición de código en tiempo real con chat integrado y asistencia de IA.</p>
+          <a href="https://angr.vercel.app" target="_blank" class="project-link magnetic-btn">
+            Ver Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+        <div class="bento-visual">
+          <img src="./public/img/editor1.png" alt="Editor UI" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Project 2: Medium -->
+      <article class="bento-item item-medium glass-panel">
+        <div class="bento-visual">
+          <img src="./public/img/Motohub1.png" alt="MotoHub UI" loading="lazy">
+        </div>
+        <div class="bento-content">
+          <div class="bento-tags">
+            <span class="tag">E-commerce</span>
+            <span class="tag">JS Vanilla</span>
+          </div>
+          <h3>MotoHub Store</h3>
+          <a href="https://github.com/angel-rodriguez" target="_blank" class="icon-link" aria-label="Ver código">
+            <i class="devicon-github-original"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3: Medium -->
+      <article class="bento-item item-medium glass-panel">
+        <div class="bento-visual">
+          <img src="./public/img/pokemon.png" alt="PokeAPI UI" loading="lazy">
+        </div>
+        <div class="bento-content">
+          <div class="bento-tags">
+            <span class="tag">API REST</span>
+            <span class="tag">Async/Await</span>
+          </div>
+          <h3>PokéAPI Explorer</h3>
+          <a href="https://github.com/angel-rodriguez" target="_blank" class="icon-link" aria-label="Ver código">
+            <i class="devicon-github-original"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4: Small/Wide -->
+      <article class="bento-item item-wide glass-panel">
+        <div class="bento-content-row">
+          <div class="text-side">
+            <h3>Gestor de Datos Java</h3>
+            <p>Sistema CRUD de escritorio con persistencia MySQL y reportes.</p>
+          </div>
+          <div class="tech-stack-mini">
+            <i class="devicon-java-plain"></i>
+            <i class="devicon-mysql-plain"></i>
           </div>
         </div>
-        <div class="footer-section footer-links">
-          <h4>Navegación</h4>
-          <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#tecnologias">Tecnologías</a></li>
-          </ul>
-        </div>
-        <div class="footer-section footer-contact">
-          <h4>Contacto directo</h4>
-          <div class="contact-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <span>angel.rodriguez@email.com</span>
+      </article>
+    </div>
+  </section>
+  <section class="skill section-wrapper" id="tecnologias">
+    <div class="skill-header">
+      <h2 class="titulo-skill">Stack y herramientas</h2>
+      <p>Combino tecnologías modernas para entregar soluciones completas, mantenibles y orientadas a negocio.</p>
+    </div>
+    <div class="tecnologias-grid">
+      <div class="tech-category">
+        <h3 class="category-title">Frontend</h3>
+        <div class="tech-items">
+          <div class="tech-card">
+            <i class="devicon-html5-plain colored"></i>
+            <span>HTML5</span>
           </div>
-          <div class="contact-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <span>+57 320 858 3768</span>
+          <div class="tech-card">
+            <i class="devicon-css3-plain colored"></i>
+            <span>CSS3</span>
           </div>
-          <div class="contact-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <span>Colombia · Remoto</span>
+          <div class="tech-card">
+            <i class="devicon-javascript-plain colored"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-react-original colored"></i>
+            <span>React</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-bootstrap-plain colored"></i>
+            <span>Bootstrap</span>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Angel Rodriguez. Construido con código limpio y mucho ☕.</p>
+      <div class="tech-category">
+        <h3 class="category-title">Backend & Datos</h3>
+        <div class="tech-items">
+          <div class="tech-card">
+            <i class="devicon-java-plain colored"></i>
+            <span>Java</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-nodejs-plain colored"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-mysql-plain colored"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-supabase-plain colored"></i>
+            <span>Supabase</span>
+          </div>
+        </div>
       </div>
-    </footer>
-    <script src="./script.js"></script>
-  </body>
+      <div class="tech-category">
+        <h3 class="category-title">Workflow</h3>
+        <div class="tech-items">
+          <div class="tech-card">
+            <i class="devicon-git-plain colored"></i>
+            <span>Git</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-github-original"></i>
+            <span>GitHub</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-vscode-plain colored"></i>
+            <span>VS Code</span>
+          </div>
+          <div class="tech-card">
+            <i class="devicon-figma-plain colored"></i>
+            <span>Figma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="contacto" class="section-wrapper">
+    <div class="footer-content">
+      <div class="footer-section footer-about">
+        <h3>Angel Rodriguez</h3>
+        <p class="footer-description">
+          Desarrollador Full-Stack Junior. Construyo productos digitales sólidos, accesibles y listos para escalar.
+        </p>
+        <div class="footer-social">
+          <a href="https://github.com/angel-rodriguez" target="_blank" class="social-link" aria-label="GitHub">
+            <i class="devicon-github-original"></i>
+          </a>
+          <a href="https://linkedin.com/in/angel-rodriguez" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="mailto:angel.rodriguez@email.com" target="_blank" class="social-link" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+        </ul>
+      </div>
+      <div class="footer-section footer-contact">
+        <h4>Contacto directo</h4>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <span>angel.rodriguez@email.com</span>
+        </div>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>+57 320 858 3768</span>
+        </div>
+        <div class="contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Colombia · Remoto</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Angel Rodriguez. Construido con código limpio y mucho ☕.</p>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+
 </html>
