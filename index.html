@@ -44,9 +44,7 @@
 </head>
 
 <body>
-  <!-- Custom Cursor -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
+
 
   <main id="home" class="hero">
     <div class="hero-background">
@@ -198,80 +196,82 @@
     <div class="section-header">
       <span class="section-subtitle">Portafolio</span>
       <h2 class="section-title">Proyectos <span class="gradient-text">Destacados</span></h2>
+      <div class="projects-intro">
+        <p>Una selección de trabajos que definen mi enfoque: precisión técnica y diseño inmersivo.</p>
+      </div>
     </div>
 
-    <div class="bento-grid">
-      <!-- Project 1: Large Feature -->
-      <article class="bento-item item-large glass-panel">
-        <div class="bento-content">
-          <div class="bento-tags">
+    <div class="cinematic-projects">
+      <!-- Project 1 -->
+      <article class="project-card-cinematic" data-scroll-speed="0.5">
+        <div class="project-visual-cinematic">
+          <img src="./public/img/proyecto1.png" alt="E-commerce Dashboard" loading="lazy" />
+          <div class="visual-overlay"></div>
+        </div>
+        <div class="project-info-cinematic">
+          <div class="project-header">
+            <span class="project-number">01</span>
+            <h3>E-commerce Dashboard</h3>
+          </div>
+          <p>Plataforma de gestión integral con análisis en tiempo real y diseño modular.</p>
+          <div class="project-tags">
             <span class="tag">React</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Real-time</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
           </div>
-          <h3>Editor Colaborativo IA</h3>
-          <p>Plataforma de edición de código en tiempo real con chat integrado y asistencia de IA.</p>
-          <a href="https://angr.vercel.app" target="_blank" class="project-link magnetic-btn">
-            Ver Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
-          </a>
-        </div>
-        <div class="bento-visual">
-          <img src="./public/img/editor1.png" alt="Editor UI" loading="lazy">
-        </div>
-      </article>
-
-      <!-- Project 2: Medium -->
-      <article class="bento-item item-medium glass-panel">
-        <div class="bento-visual">
-          <img src="./public/img/Motohub1.png" alt="MotoHub UI" loading="lazy">
-        </div>
-        <div class="bento-content">
-          <div class="bento-tags">
-            <span class="tag">E-commerce</span>
-            <span class="tag">JS Vanilla</span>
-          </div>
-          <h3>MotoHub Store</h3>
-          <a href="https://github.com/angel-rodriguez" target="_blank" class="icon-link" aria-label="Ver código">
-            <i class="devicon-github-original"></i>
+          <a href="#" class="cinematic-link">
+            Ver Proyecto <span class="arrow">→</span>
           </a>
         </div>
       </article>
 
-      <!-- Project 3: Medium -->
-      <article class="bento-item item-medium glass-panel">
-        <div class="bento-visual">
-          <img src="./public/img/pokemon.png" alt="PokeAPI UI" loading="lazy">
+      <!-- Project 2 -->
+      <article class="project-card-cinematic" data-scroll-speed="0.5">
+        <div class="project-visual-cinematic">
+          <img src="./public/img/proyecto2.png" alt="Financial App" loading="lazy" />
+          <div class="visual-overlay"></div>
         </div>
-        <div class="bento-content">
-          <div class="bento-tags">
-            <span class="tag">API REST</span>
-            <span class="tag">Async/Await</span>
+        <div class="project-info-cinematic">
+          <div class="project-header">
+            <span class="project-number">02</span>
+            <h3>Financial App</h3>
           </div>
-          <h3>PokéAPI Explorer</h3>
-          <a href="https://github.com/angel-rodriguez" target="_blank" class="icon-link" aria-label="Ver código">
-            <i class="devicon-github-original"></i>
+          <p>Aplicación fintech con visualización de datos compleja y seguridad biométrica.</p>
+          <div class="project-tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">D3.js</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <a href="#" class="cinematic-link">
+            Ver Proyecto <span class="arrow">→</span>
           </a>
         </div>
       </article>
 
-      <!-- Project 4: Small/Wide -->
-      <article class="bento-item item-wide glass-panel">
-        <div class="bento-content-row">
-          <div class="text-side">
-            <h3>Gestor de Datos Java</h3>
-            <p>Sistema CRUD de escritorio con persistencia MySQL y reportes.</p>
+      <!-- Project 3 -->
+      <article class="project-card-cinematic" data-scroll-speed="0.5">
+        <div class="project-visual-cinematic">
+          <img src="./public/img/proyecto3.png" alt="AI Art Gallery" loading="lazy" />
+          <div class="visual-overlay"></div>
+        </div>
+        <div class="project-info-cinematic">
+          <div class="project-header">
+            <span class="project-number">03</span>
+            <h3>AI Art Gallery</h3>
           </div>
-          <div class="tech-stack-mini">
-            <i class="devicon-java-plain"></i>
-            <i class="devicon-mysql-plain"></i>
+          <p>Galería inmersiva para arte generativo con experiencias VR/AR en la web.</p>
+          <div class="project-tags">
+            <span class="tag">Three.js</span>
+            <span class="tag">WebGL</span>
+            <span class="tag">Python</span>
           </div>
+          <a href="#" class="cinematic-link">
+            Ver Proyecto <span class="arrow">→</span>
+          </a>
         </div>
       </article>
     </div>
+
   </section>
   <section class="skill section-wrapper" id="tecnologias">
     <div class="skill-header">
@@ -411,6 +411,8 @@
       <p>&copy; 2024 Angel Rodriguez. Construido con código limpio y mucho ☕.</p>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="./script.js"></script>
 </body>
 

@@ -1,292 +1,263 @@
 // ============================================
 // PORTAFOLIO - ANGEL RODRIGUEZ
-// JavaScript con sistema de tema mejorado
+// Premium Experience Script
 // ============================================
 
-// ============================================
-// 1. SISTEMA DE MODO CLARO/OSCURO CON CSS VARIABLES
-// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Register GSAP Plugins
+  gsap.registerPlugin(ScrollTrigger);
 
-const themeToggle = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
+  // ============================================
+  // 1. THEME MANAGEMENT
+  // ============================================
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
 
-// Cargar tema guardado o usar preferencia del sistema
-function loadTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  if (savedTheme) {
-    htmlElement.setAttribute('data-theme', savedTheme);
-  } else if (!prefersDark) {
-    htmlElement.setAttribute('data-theme', 'light');
+  function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+      htmlElement.setAttribute('data-theme', savedTheme);
+    } else if (!prefersDark) {
+      htmlElement.setAttribute('data-theme', 'light');
+    }
   }
-}
 
-// Cambiar tema
-function toggleTheme() {
-  const currentTheme = htmlElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  
-  htmlElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-}
+  function toggleTheme() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-// Event listener
-if (themeToggle) {
-  themeToggle.addEventListener('click', toggleTheme);
-}
-
-// Cargar tema al iniciar
-loadTheme();
-
-// Detectar cambios en preferencia del sistema
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!localStorage.getItem('theme')) {
-    htmlElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    // Animate transition
+    gsap.to('body', {
+      opacity: 0.5,
+      duration: 0.2,
+      yoyo: true,
+      repeat: 1,
+      onRepeat: () => {
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+    });
   }
-});
 
-// ============================================
-// 2. NAVEGACIÓN SUAVE Y ACTIVA
-// ============================================
-const menuLinks = document.querySelectorAll('.lista li a');
-const sections = document.querySelectorAll('main, div[id], section[id]');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+  loadTheme();
 
-// Navegación suave al hacer clic
-menuLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    
-    if (targetSection) {
-      const offsetTop = targetSection.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
+  // ============================================
+  // 2. HERO ANIMATIONS
+  // ============================================
+  const heroTimeline = gsap.timeline();
+
+  heroTimeline
+    .from('.hero-title .reveal-text', {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power4.out'
+    })
+    .from('.hero-description', {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, '-=0.5')
+    .from('.hero-cta-group a', {
+      y: 20,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: 'back.out(1.7)'
+    }, '-=0.5')
+    .from('.glass-card-showcase', {
+      x: 50,
+      opacity: 0,
+      rotation: 10,
+      duration: 1.2,
+      ease: 'power3.out'
+    }, '-=1');
+
+  // ============================================
+  // 3. CINEMATIC PARALLAX PROJECTS
+  // ============================================
+  const cinematicCards = document.querySelectorAll('.project-card-cinematic');
+
+  cinematicCards.forEach(card => {
+    const image = card.querySelector('img');
+
+    // Parallax Effect
+    gsap.to(image, {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Reveal Animation
+    gsap.from(card, {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%'
+      }
+    });
+  });
+
+
+  // ============================================
+  // 4. SKILLS MAGNETIC & FLOATING EFFECT
+  // ============================================
+  const techCards = document.querySelectorAll('.tech-card');
+
+  // Floating Animation (Randomized)
+  techCards.forEach(card => {
+    gsap.to(card, {
+      y: 'random(-10, 10)',
+      duration: 'random(2, 4)',
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      delay: 'random(0, 2)'
+    });
+
+    // Magnetic Effect
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      gsap.to(card, {
+        x: x * 0.3, // Magnetic strength
+        y: y * 0.3,
+        duration: 0.3,
+        ease: 'power2.out',
+        overwrite: 'auto' // Prevent conflict with float
       });
-      
-      // Actualizar link activo
-      menuLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-    }
-  });
-});
-
-// Resaltar sección activa al hacer scroll - MEJORADO
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-  // Debounce para mejor performance
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    updateActiveSection();
-  }, 50);
-});
-
-function updateActiveSection() {
-  const scrollPosition = window.scrollY + 150; // Offset para activar antes
-  let current = 'home'; // Default al inicio
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionBottom = sectionTop + section.offsetHeight;
-    const sectionId = section.getAttribute('id');
-    
-    // Verifica si la posici\u00f3n del scroll est\u00e1 dentro de esta secci\u00f3n
-    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-      current = sectionId;
-    }
-  });
-  
-  // Si estamos al final de la p\u00e1gina, activa el \u00faltimo link
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-    current = 'contacto';
-  }
-  
-  // Actualizar clases active
-  menuLinks.forEach(link => {
-    link.classList.remove('active');
-    const linkHref = link.getAttribute('href');
-    if (linkHref === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-}
-
-// Llamar al cargar la p\u00e1gina
-window.addEventListener('load', updateActiveSection);
-
-// ============================================
-// 3. ANIMACIONES DE ENTRADA (INTERSECTION OBSERVER)
-// ============================================
-const observerOptions = {
-  threshold: 0.15,
-  rootMargin: '0px 0px -100px 0px'
-};
-
-const fadeInObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('fade-in-visible');
-      }, index * 100);
-      fadeInObserver.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-// Aplicar animaciones a diferentes elementos (imagen de perfil excluida para evitar movimientos)
-const animatedElements = document.querySelectorAll('.card-proyecto, .contenedor-experiencia, .text-sobre-mi');
-animatedElements.forEach(el => {
-  el.classList.add('fade-in-element');
-  fadeInObserver.observe(el);
-});
-
-// ============================================
-// 4. EFECTO PARALLAX MEJORADO
-// ============================================
-let ticking = false;
-
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      parallaxEffect();
-      ticking = false;
     });
-    ticking = true;
-  }
-});
 
-function parallaxEffect() {
-  // Parallax completamente desactivado para evitar movimientos no deseados
-  // Si quieres reactivarlo, descomenta y ajusta los valores según necesites
-  
-  /*
-  const scrolled = window.pageYOffset;
-  
-  const imgPerfil = document.querySelector('.img-perfil');
-  if (imgPerfil) {
-    imgPerfil.style.transform = `translateY(${scrolled * 0.05}px)`;
-  }
-  
-  const principalBefore = document.querySelector('.principal');
-  if (principalBefore && scrolled < 800) {
-    principalBefore.style.transform = `translateY(${scrolled * 0.1}px)`;
-  }
-  */
-}
-
-// ============================================
-// 5. CAROUSEL DE IMÁGENES EN PROYECTOS
-// ============================================
-
-const carouselCards = document.querySelectorAll('.card-editor');
-
-carouselCards.forEach(card => {
-  const images = card.querySelectorAll('.carousel-img');
-  const indicators = card.querySelectorAll('.indicator');
-  let currentIndex = 0;
-  let carouselInterval = null;
-
-  // Función para cambiar imagen
-  function changeImage(index) {
-    // Remover clase active de todas las imágenes e indicadores
-    images.forEach(img => img.classList.remove('active'));
-    indicators.forEach(ind => ind.classList.remove('active'));
-    
-    // Agregar clase active a la imagen e indicador actual
-    images[index].classList.add('active');
-    indicators[index].classList.add('active');
-    currentIndex = index;
-  }
-
-  // Auto-carousel al hacer hover
-  card.addEventListener('mouseenter', () => {
-    carouselInterval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      changeImage(currentIndex);
-    }, 2000); // Cambia cada 2 segundos
-  });
-
-  // Detener carousel al salir del hover
-  card.addEventListener('mouseleave', () => {
-    clearInterval(carouselInterval);
-    changeImage(0); // Volver a la primera imagen
-  });
-
-  // Click en indicadores para cambiar imagen manualmente
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', (e) => {
-      e.stopPropagation();
-      clearInterval(carouselInterval);
-      changeImage(index);
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        x: 0,
+        y: 0, // This might conflict with float, but float uses relative values usually. 
+        // Better to let float resume or reset to a base.
+        // For simplicity, we just animate back to 0 offset.
+        duration: 0.8,
+        ease: 'elastic.out(1, 0.3)'
+      });
     });
   });
-});
 
-// ============================================
-// 6. SECCIÓN DE TECNOLOGÍAS - GRID ESTÁTICO
-// ============================================
-// El nuevo diseño usa grid estático sin animaciones de slider
-// Las interacciones hover están definidas en CSS
+  // Staggered Reveal for Skills
+  gsap.from('.tech-card', {
+    scrollTrigger: {
+      trigger: '.tecnologias-grid',
+      start: 'top 85%',
+    },
+    scale: 0,
+    opacity: 0,
+    duration: 0.6,
+    stagger: {
+      amount: 0.8,
+      grid: 'auto',
+      from: 'center'
+    },
+    ease: 'back.out(1.7)'
+  });
 
-// ============================================
-// 6. ANIMACIONES DE HOVER MEJORADAS
-// ============================================
-// Efectos simplificados para diseño minimalista
+  // ============================================
+  // 5. CUSTOM CURSOR
+  // ============================================
+  const cursorDot = document.createElement('div');
+  const cursorOutline = document.createElement('div');
 
-// ============================================
-// 7. CONTADOR ANIMADO PARA ESTADÍSTICAS
-// ============================================
-function animateCounter(element, target, duration = 2000) {
-  let start = 0;
-  const increment = target / (duration / 16);
-  
-  const timer = setInterval(() => {
-    start += increment;
-    if (start >= target) {
-      element.textContent = target;
-      clearInterval(timer);
-    } else {
-      element.textContent = Math.floor(start);
-    }
-  }, 16);
-}
+  cursorDot.className = 'cursor-dot';
+  cursorOutline.className = 'cursor-outline';
 
-// ============================================
-// 8. CARDS DE PROYECTOS - ESTILO MINIMALISTA
-// ============================================
-// Efecto 3D complejo removido para diseño más limpio y profesional
-// Las cards ahora usan solo hover simple definido en CSS
+  document.body.appendChild(cursorDot);
+  document.body.appendChild(cursorOutline);
 
-// ============================================
-// 9. LOADING SUAVE AL CARGAR PÁGINA
-// ============================================
-window.addEventListener('load', () => {
-  document.body.style.opacity = '0';
-  setTimeout(() => {
-    document.body.style.transition = 'opacity 0.5s ease';
-    document.body.style.opacity = '1';
-  }, 100);
-  
-  console.log('%c🚀 Portafolio de Angel Rodriguez - Cargado correctamente ✅', 
-    'color: #667eea; font-size: 16px; font-weight: bold;');
-});
+  window.addEventListener('mousemove', (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
 
-// ============================================
-// 10. CURSOR PERSONALIZADO (OPCIONAL)
-// ============================================
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-document.body.appendChild(cursor);
+    // Dot follows instantly
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
 
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
+    // Outline follows with delay (GSAP)
+    gsap.to(cursorOutline, {
+      x: posX,
+      y: posY,
+      duration: 0.15,
+      ease: 'power2.out'
+    });
+  });
 
-// Efecto en elementos interactivos
-document.querySelectorAll('a, button, .card-proyecto').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+  // Hover States
+  const interactables = document.querySelectorAll('a, button, .bento-item, .tech-card');
+
+  interactables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      gsap.to(cursorOutline, {
+        scale: 1.5,
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        duration: 0.3
+      });
+    });
+
+    el.addEventListener('mouseleave', () => {
+      gsap.to(cursorOutline, {
+        scale: 1,
+        backgroundColor: 'transparent',
+        duration: 0.3
+      });
+    });
+  });
+
+  // ============================================
+  // 6. SMOOTH SCROLL (Native + Active Link)
+  // ============================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Active Link Highlighter
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('.section-wrapper');
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (scrollY >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(li => {
+      li.classList.remove('active');
+      if (li.getAttribute('href').includes(current)) {
+        li.classList.add('active');
+      }
+    });
+  });
+
+  console.log('%c✨ Portfolio Enhanced with GSAP', 'color: #6366f1; font-weight: bold; font-size: 14px;');
 });
